@@ -16,7 +16,7 @@ Varje li element ska ha en synlig border. (Valfritt utseende)
 
 /* BYT UT MINST ETT FOTO START*/
 
-let secondPicture = document.querySelector ('.art-2 figure img');
+
 
 let buyButtonArticle2 = document.querySelector('.art-2 button');
 
@@ -29,6 +29,7 @@ buyButtonArticle2.addEventListener('click',
 )
 
 function pictureChange(){
+    let secondPicture = document.querySelector ('.art-2 figure img');
     secondPicture.setAttribute('src', 'img/hoodie-forrest.png')
 }
 
@@ -41,9 +42,6 @@ function pictureChange(){
 
 //Target Nav A
 let navA = document.querySelectorAll('nav a');
-
-//Target Body
-let body = document.querySelector('body');
 
 //Choose the Home Nav Button
 let homeNavKnapp = navA[0];
@@ -61,7 +59,7 @@ homeNavKnapp.addEventListener('click',
 
 // Create the function to add the color red to body
 function changeColorWithHome(){
-    
+    let body = document.querySelector('body');
     body.style.backgroundColor = 'red';
 }
 
@@ -72,10 +70,6 @@ function changeColorWithHome(){
 
 
 /* ÄNDRA TEXT PÅ ETT ELEMENT START*/
-
-//Choose the Products Nav Button
-
-let productsHomeNav = navA[1];
 
 
 //Add the Click event to change the text of the Products Home Button to 'RESET ME';
@@ -90,6 +84,7 @@ productsHomeNav.addEventListener('click',
 
 // Create the function to change the text to 'RESET ME'
 function changeProductsText(){
+    let productsHomeNav = navA[1];
     productsHomeNav.innerText = 'RESET ME';
 }
 
@@ -114,7 +109,31 @@ function changeButtonColor(){
 
 
 
+
+
+
 /* TA BORT ETT ELEMENT START */
+
+// Klicka på home i footer för att ta bort Social Media
+
+let menuFooter = document.querySelectorAll('section article a');
+
+let homeFooter = menuFooter[0];
+
+homeFooter.addEventListener('click',
+    function(event){
+        removeSocialMedia();
+    }
+)
+
+
+function removeSocialMedia(){
+    let articlesFooter = document.querySelectorAll('section article');
+    let socialMedia = articlesFooter[2];
+
+    socialMedia.style.display = 'none';
+}
+
 
 
 
@@ -122,6 +141,16 @@ function changeButtonColor(){
 
 
 
+
+
+
+/* LÄGG TILL EN LISTA START */
+//Varje li element ska ha en synlig border. 
+
+// Klicka på products-knappen i footer för att fp en products lista
+
+
+/* LÄGG TILL EN LISTA SLUT */
 
 
 
@@ -155,6 +184,10 @@ function resetAll(){
     let buyButtonArticle2 = document.querySelector('.art-2 button');
     buyButtonArticle2.style.backgroundColor = 'black';
     buyButtonArticle2.style.color = 'white';
+
+
+    //reset Social Media to show
+
 
 }
 
