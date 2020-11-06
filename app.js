@@ -100,6 +100,30 @@ function changeProductsText(){
 
 
 
+/* ÄNDRA FÄRG PÅ EN KNAPP START*/
+
+//Event listener som byter färg på knappen finns på rad 27
+
+function changeButtonColor(){
+    buyButtonArticle2.style.backgroundColor = 'yellow';
+    buyButtonArticle2.style.color = 'black';
+}
+
+
+/* ÄNDRA FÄRG PÅ EN KNAPP SLUT*/
+
+
+
+/* TA BORT ETT ELEMENT START */
+
+
+
+/* TA BORT ETT ELEMENT SLUT */
+
+
+
+
+
 
 
 /* ÅTERSTÄLLNINGSKNAPPEN START*/
