@@ -37,6 +37,43 @@ function pictureChange(){
 
 
 
+/* ÄNDRA FÄRG PÅ ETT ELEMENT START */
+
+//Target Nav A
+let navA = document.querySelectorAll('nav a');
+
+//Target Body
+let body = document.querySelector('body');
+
+//Choose the Home Nav Button
+let homeNavKnapp = navA[0];
+
+
+//Add the Click event to change the color of home to red.
+homeNavKnapp.addEventListener('click',
+    function(event){
+        changeColorWithHome();
+    }
+
+
+)
+
+
+// Create the function to add the color red to body
+function changeColorWithHome(){
+    
+    body.style.backgroundColor = 'red';
+}
+
+
+/* ÄNDRA FÄRG PÅ ETT ELEMENT SLUT */
+
+
+
+
+
+
+
 /* ÅTERSTÄLLNINGSKNAPPEN START*/
 
 
