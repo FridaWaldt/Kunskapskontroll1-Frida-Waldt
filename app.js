@@ -71,6 +71,34 @@ function changeColorWithHome(){
 
 
 
+/* ÄNDRA TEXT PÅ ETT ELEMENT START*/
+
+//Choose the Products Nav Button
+
+let productsHomeNav = navA[1];
+
+
+//Add the Click event to change the text of the Products Home Button to 'RESET ME';
+
+productsHomeNav.addEventListener('click',
+
+    function(event){
+        changeProductsText();
+    }
+)
+
+
+// Create the function to change the text to 'RESET ME'
+function changeProductsText(){
+    productsHomeNav.innerText = 'RESET ME';
+}
+
+
+
+/* ÄNDRA TEXT PÅ ETT ELEMENT SLUT*/
+
+
+
 
 
 
