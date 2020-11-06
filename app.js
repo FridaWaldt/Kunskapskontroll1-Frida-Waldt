@@ -5,8 +5,8 @@ Byt ut minst ett foto - CHECK
 Ändra bakgrundsfärg på minst ett element - CHECK
 Ändra text på minst ett element - CHECK
 Ändra färg på minst en knapp - CHECK
-Ta bort minst 1 element (Måste läggas till igen när man trycker på återställningsknappen)
-Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen)
+Ta bort minst 1 element (Måste läggas till igen när man trycker på återställningsknappen) - CHECK
+Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen) 
 Listan ska innehålla flera li element
 Varje li element ska ha en synlig border. (Valfritt utseende)
 */
@@ -15,8 +15,6 @@ Varje li element ska ha en synlig border. (Valfritt utseende)
 
 
 /* BYT UT MINST ETT FOTO START*/
-
-
 
 let buyButtonArticle2 = document.querySelector('.art-2 button');
 
@@ -72,6 +70,8 @@ function changeColorWithHome(){
 /* ÄNDRA TEXT PÅ ETT ELEMENT START*/
 
 
+let productsHomeNav = navA[1];
+
 //Add the Click event to change the text of the Products Home Button to 'RESET ME';
 
 productsHomeNav.addEventListener('click',
@@ -84,7 +84,7 @@ productsHomeNav.addEventListener('click',
 
 // Create the function to change the text to 'RESET ME'
 function changeProductsText(){
-    let productsHomeNav = navA[1];
+    
     productsHomeNav.innerText = 'RESET ME';
 }
 
@@ -129,6 +129,11 @@ homeFooter.addEventListener('click',
 
 function removeSocialMedia(){
     let articlesFooter = document.querySelectorAll('section article');
+
+    /* Fick inte removeChild() att fungera
+     articlesFooter.removeChild(articlesFooter.childNodes[2]); */
+
+
     let socialMedia = articlesFooter[2];
 
     socialMedia.style.display = 'none';
@@ -187,8 +192,9 @@ function resetAll(){
 
 
     //reset Social Media to show
-
-
+    let articlesFooter = document.querySelectorAll('section article');
+    let socialMedia = articlesFooter[2];
+    socialMedia.style.display = 'flex';
 }
 
 /* ÅTERSTÄLLNINGSKNAPPEN SLUT*/
