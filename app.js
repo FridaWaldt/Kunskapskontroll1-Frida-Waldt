@@ -133,7 +133,7 @@ function removeSocialMedia(){
 
 /* LÄGG TILL EN LISTA START */
 
-    let footerList = document.querySelector('footer section')
+  /*   let footerList = document.querySelector('footer section')
     let productListArticle = document.createElement('article');
     let productList = document.createElement('ul');
     let productListH3 = document.createElement('h3');
@@ -142,10 +142,12 @@ function removeSocialMedia(){
  
     footerList.appendChild(productListArticle);
     productListArticle.appendChild(productList);
-    productList.appendChild(productListH3);
+    productList.appendChild(productListH3); */
 
 
 /* if (productList.hasChildNodes() === false){  Varför ville detta inte fungera*/
+
+let productsFooter = menuFooter[1];
 
 let thisIsTrue = true;
 
@@ -160,17 +162,23 @@ productsFooter.addEventListener('click',
 )
 
 
-
-let productListItemsNames = ['Fire Hoodie', 'Forrest Hoodie', 'Water Hoodie', 'Ash Hoodie']
+let myListItemsNames = ['Fire Hoodie', 'Forrest Hoodie', 'Water Hoodie', 'Ash Hoodie']
 
 function createList(){
     
-    for(i = 0; i < productListItemsNames.length ; i++){
-        productListH3.innerText = 'Products';
-        let productListItem = document.createElement('li');
-        productListItem.innerText = productListItemsNames[i];
-        productList.appendChild(productListItem);
-        productListItem.style.border = '2px solid blue';
+    let footer = document.querySelector('footer');
+    let myList = document.createElement('ul');
+    footer.appendChild(myList);
+    let myListH3 = document.createElement('h3');
+    myList.appendChild(myListH3);
+
+
+    for(i = 0; i < myListItemsNames.length ; i++){
+        myListH3.innerText = 'Products';
+        let myListItem = document.createElement('li');
+        myListItem.innerText = myListItemsNames[i];
+        myList.appendChild(myListItem);
+        myListItem.style.border = '2px solid blue';
     }
 }
 
