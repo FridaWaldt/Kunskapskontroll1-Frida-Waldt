@@ -1,19 +1,3 @@
-/* Måste vara med: 
-En knapp som återställer allt till originalutseendet
-Alla ändringar som du har gjort ska ändras tillbaka - CHECK
-Byt ut minst ett foto - CHECK
-Ändra bakgrundsfärg på minst ett element - CHECK
-Ändra text på minst ett element - CHECK
-Ändra färg på minst en knapp - CHECK
-Ta bort minst 1 element (Måste läggas till igen när man trycker på återställningsknappen) - CHECK
-Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen) 
-Listan ska innehålla flera li element
-Varje li element ska ha en synlig border. (Valfritt utseende)
-*/
-
-
-
-
 /* BYT UT MINST ETT FOTO START*/
 
 let buyButtonArticle2 = document.querySelector('.art-2 button');
@@ -28,7 +12,7 @@ buyButtonArticle2.addEventListener('click',
 
 function pictureChange(){
     let secondPicture = document.querySelector ('.art-2 figure img');
-    secondPicture.setAttribute('src', 'img/hoodie-forrest.png')
+    secondPicture.setAttribute('src', 'img/pikachu.png')
 }
 
 /* BYT UT MINST ETT FOTO SLUT*/
@@ -100,7 +84,7 @@ function changeProductsText(){
 //Event listener som byter färg på knappen finns på rad 27
 
 function changeButtonColor(){
-    buyButtonArticle2.style.backgroundColor = 'yellow';
+    buyButtonArticle2.style.background = 'yellow';
     buyButtonArticle2.style.color = 'black';
 }
 
@@ -140,8 +124,6 @@ function removeSocialMedia(){
 }
 
 
-
-
 /* TA BORT ETT ELEMENT SLUT */
 
 
@@ -150,9 +132,48 @@ function removeSocialMedia(){
 
 
 /* LÄGG TILL EN LISTA START */
-//Varje li element ska ha en synlig border. 
 
-// Klicka på products-knappen i footer för att fp en products lista
+    let footerList = document.querySelector('footer section')
+    let productListArticle = document.createElement('article');
+    let productList = document.createElement('ul');
+    let productListH3 = document.createElement('h3');
+    let productsFooter = menuFooter[1];
+
+ 
+    footerList.appendChild(productListArticle);
+    productListArticle.appendChild(productList);
+    productList.appendChild(productListH3);
+
+
+/* if (productList.hasChildNodes() === false){  Varför ville detta inte fungera*/
+
+let thisIsTrue = true;
+
+productsFooter.addEventListener('click',
+    function(event){
+        if (thisIsTrue){
+            thisIsTrue = false;
+            createList();
+        }
+        
+    }
+)
+
+
+
+let productListItemsNames = ['Fire Hoodie', 'Forrest Hoodie', 'Water Hoodie', 'Ash Hoodie']
+
+function createList(){
+    
+    for(i = 0; i < productListItemsNames.length ; i++){
+        productListH3.innerText = 'Products';
+        let productListItem = document.createElement('li');
+        productListItem.innerText = productListItemsNames[i];
+        productList.appendChild(productListItem);
+        productListItem.style.border = '2px solid blue';
+    }
+}
+
 
 
 /* LÄGG TILL EN LISTA SLUT */
@@ -195,6 +216,15 @@ function resetAll(){
     let articlesFooter = document.querySelectorAll('section article');
     let socialMedia = articlesFooter[2];
     socialMedia.style.display = 'flex';
+
+
+    //reset UL
+    let productList = document.querySelector('ul');
+    productList.remove();
+    thisIsTrue = true;
 }
 
 /* ÅTERSTÄLLNINGSKNAPPEN SLUT*/
+
+
+
